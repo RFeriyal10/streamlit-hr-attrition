@@ -101,7 +101,7 @@ elif menu == "Prediction":
             JobInvolvement = st.selectbox("Job Involvement (1–4)", [1, 2, 3, 4])
         with col2:
             EmployeeSatisfaction = st.selectbox("Employee Satisfaction (1–4)", [1, 2, 3, 4])
-            DailyRate = st.number_input("Daily Rate", 0, 1500, 800)
+            DailyRate = st.number_input("Daily Rate (opsional)", min_value=0, max_value=1500, value=0)
             DistanceFromHome = st.number_input("Distance From Home (km)", 0, 100, 10)
             Age = st.number_input("Age", min_value=18, max_value=60, value=30)
             EnvironmentSatisfaction = st.selectbox("Environment Satisfaction (1–4)", [1, 2, 3, 4])
