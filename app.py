@@ -81,6 +81,7 @@ if menu == "Home":
         overtime_attrition.plot(kind='bar', stacked=True, figsize=(8,5), colormap='Set2')
         plt.title("OverTime vs Attrition")
         plt.ylabel("Proportion")
+        plt.xticks(rotation=0)
         st.pyplot(plt)
     else:
         st.warning("Kolom 'OverTime' tidak ditemukan di dataset.")
@@ -98,12 +99,14 @@ if menu == "Home":
         marital_summary.plot(kind='bar', stacked=True, figsize=(8,5), colormap='Pastel1')
         plt.title("Attrition by Marital Status (Single vs Married)")
         plt.ylabel("Proportion")
+        plt.xticks(rotation=0)
         st.pyplot(plt)
     elif "MaritalStatus" in df.columns:
-        st.write("### 4. Attrition by Marital Status")
+        st.write("### 2. Attrition by Marital Status")
         marital_attrition = df.groupby("MaritalStatus")["Attrition"].value_counts(normalize=True).unstack().fillna(0)
         marital_attrition.plot(kind='bar', stacked=True, figsize=(8,5), colormap='Pastel1')
         plt.title("Attrition by Marital Status")
+        plt.xticks(rotation=0)
         st.pyplot(plt)
     else:
         st.warning("Kolom 'MaritalStatus' tidak ditemukan di dataset.")
